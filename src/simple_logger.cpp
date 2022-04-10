@@ -5,7 +5,7 @@
 
 std::map<LogLevel, std::string> LevelMsg{
     std::make_pair(LogLevel::TRACE, "[TRACE] "), std::make_pair(LogLevel::DEBUG, "[DEBUG] "),
-    std::make_pair(LogLevel::INFO, "[ INFO] "),  std::make_pair(LogLevel::WARN, "[ WARN] "),
+    std::make_pair(LogLevel::INFO, "[INFO ] "),   std::make_pair(LogLevel::WARN, "[WARN ] "),
     std::make_pair(LogLevel::ERROR, "[ERROR] "), std::make_pair(LogLevel::FATAL, "[FATAL] "),
 };
 

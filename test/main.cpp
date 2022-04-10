@@ -1,13 +1,12 @@
-#include <simple_logger.hpp>
 #include <llvm/Support/CommandLine.h>
+#include <simple_logger.hpp>
 
 int main(int argc, char** argv) {
     llvm::cl::opt<LogLevel> logLevel(
         "log-level", llvm::cl::init(LogLevel::INFO), llvm::cl::desc("Enable  messages"),
-        llvm::cl::values(
-            clEnumValN(LogLevel::TRACE, "TRACE", ""), clEnumValN(LogLevel::DEBUG, "DEBUG", ""),
-            clEnumValN(LogLevel::INFO, "INFO", ""), clEnumValN(LogLevel::WARN, "WARN", ""),
-            clEnumValN(LogLevel::ERROR, "ERROR", ""), clEnumValN(LogLevel::FATAL, "FATAL", "")));
+        llvm::cl::values(clEnumValN(LogLevel::TRACE, "TRACE", ""), clEnumValN(LogLevel::DEBUG, "DEBUG", ""),
+                         clEnumValN(LogLevel::INFO, "INFO", ""), clEnumValN(LogLevel::WARN, "WARN", ""),
+                         clEnumValN(LogLevel::ERROR, "ERROR", ""), clEnumValN(LogLevel::FATAL, "FATAL", "")));
     llvm::cl::ParseCommandLineOptions(argc, argv);
 
     LOGGER->level() = logLevel;
