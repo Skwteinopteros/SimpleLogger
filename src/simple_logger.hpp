@@ -4,8 +4,6 @@
 #include <mutex>
 #include <string>
 
-#define LOGGER SimpleLogger::GetLogger()
-
 enum LogLevel { TRACE, DEBUG, INFO, WARN, ERROR, FATAL };
 
 /**

@@ -1,6 +1,8 @@
 #include <llvm/Support/CommandLine.h>
 #include <simple_logger.hpp>
 
+#define LOGGER SimpleLogger::GetLogger()
+
 int main(int argc, char** argv) {
     llvm::cl::opt<LogLevel> logLevel(
         "log-level", llvm::cl::init(LogLevel::INFO), llvm::cl::desc("Enable  messages"),
